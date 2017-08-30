@@ -107,25 +107,25 @@ int main() {
     printf("Bem vindo ao programa que resolve sistemas de equações lineares do tipo Ax=b\n");
     printf("digite o número n = dimensão da matriz A\n");
     scanf("%d",&dim);
-    
+
     printf("agora digite cada entrada da matriz A separada por espaços e separe as linhas pela tecla Enter\n");
     scanMatrixA();
-    
+
     printf("agora digite as entradas do vetor b separadas por espaço. (Ax = b)\n");
     scanVectorB();
-    
+
     printf("matriz A:\n");
     printMatrixA();
-    
+
     printf("vetor b:\n");
     printVector(b);
-    
+
     reduceRows();
     //printMatrixA();
     getX();
-    
+
     printf("solução x:\n");
     printVector(x);
-    
+
     return 0;
 }

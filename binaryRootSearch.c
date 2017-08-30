@@ -10,11 +10,11 @@ long double f(long double x) {
 
 long double root(int i, long double m, long double n) {
     if (f(m)*f(n) > 0) {
-        printf("f(m) and f(n) have the same signal");
+        printf("Não há raizes ou há um número par de raízes no intervalo [%Lf, %Lf]\n",m,n);
         return 0;
     }
     if (i<1) {
-        printf("invalid number of iterations i");
+        printf("Número de iterações inválido\n");
         return 0;
     }
     long double c = (m+n)/2.0;
@@ -41,6 +41,11 @@ void table(int x, long double m, long double n) {
 }
 
 int main(int argc, char *argv[]) {
+    if (argc != 4) {
+        printf("Número de argumentos incorreto\n");
+        printf("Uso correto: ./binaryRootSearch <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>\n");
+        return 1;
+    }
     int n = atoi(argv[1]);
     long double a = atoi(argv[2]);
     long double b = atoi(argv[3]);
