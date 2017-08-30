@@ -18,11 +18,13 @@ long double newton(long double x0, int i) {
 }
 
 int main(int argc, char *argv[]) {
-    // como usar:
-    // ./a.out <número de iterações> <valor inicial de x>
-    // exemplo: ./a.out 3 0.5
+    if (argc != 3) {
+        printf("Número de argumentos incorreto\n");
+        printf("Uso correto: ./newtonMethod <número_de_iterações> <valor_incicial_de_x>\n");
+        return 1;
+    }
     int n = atoi(argv[1]);
     long double x0 = atof(argv[2]);
-    printf("root = %3.24Lf\n", newton(x0,n);
+    printf("root = %3.24Lf\n", newton(x0,n));
     return 0;
 }
