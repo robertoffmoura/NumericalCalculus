@@ -2,13 +2,19 @@
 
 Repositório com algumas soluções de problemas de Cálculo Numérico do 4º semestre do IME
 
+## baseChange.c
+Pega um número em uma base e retorna ele em outra base
+```
+./baseChange <número> <base_inicial> <base_final>
+```
+
 ## binaryRootSearch.c
-Se há uma raiz de uma funcão em um intervalo [a,b], o programa divide o intervalo pela metade recursivamente um número i de vezes. Você deve editar o programa e colocar a função p.
+Se há uma raiz de uma funcão p em um intervalo [a,b], o programa divide o intervalo pela metade recursivamente um número i de vezes. Você deve editar o programa e colocar a função p.
 ```
 ./binaryRootSearch <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>
 ```
 ## newtonMethod.c
-O programa usa o método de Newton para achar uma aproximação de uma raiz de uma função, a partir de um valor inicial de x. Você deve editar o programa e colocar a função p e sua derivada p'.
+O programa usa o método de Newton para achar uma aproximação de uma raiz de uma função p, a partir de um valor inicial de x. Você deve editar o programa e colocar a função p e sua derivada p'.
 ```
 ./newtonMethod <número_de_iterações> <valor_incicial_de_x>
 ```
