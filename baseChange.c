@@ -24,6 +24,10 @@ unsigned long int fromBase10toBaseB(unsigned int n, unsigned int b) {
     return result;
 }
 
+int checkRange(unsigned long int x) {
+    return (2 <= x && x <= 10);
+}
+
 int main(int argc, char *argv[]) {
     if (argc != 4) {
         printf("Número incorreto de argumentos\n");
@@ -34,6 +38,10 @@ int main(int argc, char *argv[]) {
     numero1 = atoi(argv[1]);
     base1 = atoi(argv[2]);
     base2 = atoi(argv[3]);
+    if (!checkRange(base1) || !checkRange(base2)) {
+        printf("As bases devem ser inteiros no intervalo [2, 10]\n");
+        return 1;
+    }
     printf("%lu\n", fromBase10toBaseB(fromBaseBtoBase10(numero1, base1), base2));
     return 0;
 }
