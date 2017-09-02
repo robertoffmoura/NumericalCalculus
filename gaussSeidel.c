@@ -6,6 +6,7 @@ int dim;
 
 long double a[N][N];
 long double x[N];
+long double xf[N];
 long double b[N];
 
 long double min(long double a, long double b) {
@@ -42,54 +43,6 @@ int max(int column) {
         }
     }
     return maxIndex;
-}
-
-void getUpperTriangularMatrix() {
-    for (int j=0;j<dim;j++) {
-        int maxItemInColumnIndex = max(j);
-        if (a[maxItemInColumnIndex][j] == 0) {
-            printf("determinant is zero");
-            return;
-        }
-        swapRows(j,maxItemInColumnIndex);
-        for (int i=j+1;i<dim;i++) {
-            long double aij = a[i][j];
-            for (int j2=j;j2<dim;j2++) {
-                a[i][j2]-=a[j][j2]*aij/a[j][j];
-            }
-            b[i]-=b[j]*aij/a[j][j];
-        }
-    }
-}
-/*
-void getLowerTriangularMatrix() {
-    for (int j=0;j<dim;j++) {
-        int maxItemInColumnIndex = max(j);
-        if (a[maxItemInColumnIndex][j] == 0) {
-            printf("determinant is zero");
-            return;
-        }
-        swapRows(j,maxItemInColumnIndex);
-        for (int i=dim-1-j-1;i>=0;i--) {
-            long double aij = a[i][j];
-            for (int j2=j;j2<dim;j2++) {
-                a[i][j2]-=a[dim-1-j][j2]*aij/a[dim-1-j][j];
-            }
-            b[i]-=b[dim-i-j]*aij/a[dim-1-j][j];
-        }
-    }
-}
-*/
-
-void getX() {
-    long double r;
-    for (int i=dim-1;i>-1;i--) {
-        r = b[i];
-        for (int j=dim-1;j>i;j--) {
-            r -= a[i][j]*x[j];
-        }
-        x[i] = r/a[i][i];
-    }
 }
 
 void scanMatrixA() {
@@ -130,35 +83,62 @@ void printSystem() {
         for (int j=0;j<dim;j++) {
             printf("%10.6Lf ",a[i][j]);
         }
-        printf("] [ x%d ] = [ %10.6Lf ]\n", i+1, b[i]);
+        printf("] [ x%-*d ] = [ %10.6Lf ]\n", (int)log10(dim)+1, i+1, b[i]);
+    }
+}
+
+void nextIteraction() {
+    for (int i=0; i < dim; i++) {
+        xf[i] = b[i];
+        for (int j=0;j<i;j++) {
+            //Gauss-Seidel:
+            xf[i]-=a[i][j]*xf[j];
+            //Gauss-Jacobi:
+            //xf[i]-=a[i][j]*x[j];
+        }
+        for (int j=i+1;j<dim;j++) {
+            xf[i]-=a[i][j]*x[j];
+        }
+        xf[i] /= a[i][i];
+    }
+    for (int i = 0;i<dim;i++) {
+        x[i] = xf[i];
     }
 }
 
 int main() {
-    printf("Bem vindo ao programa que resolve sistemas de equações lineares do tipo Ax=b\n");
+    int n;
+    printf("Bem vindo ao programa que resolve sistemas de equações lineares do tipo Ax=b usando o método de Gauss-Seidel\n");
     printf("Digite o número n = dimensão da matriz A\n");
     scanf("%d",&dim);
 
     printf("Agora digite cada entrada da matriz A separada por espaços e separe as linhas pela tecla Enter\n");
     scanMatrixA();
 
-    printf("Agora digite as entradas do vetor b separadas por espaço. (Ax = b)\n");
+    printf("Digite as entradas do vetor b separadas por espaço. (Ax = b)\n");
     scanVector(b);
+
+    printf("Agora digite as entradas do vetor x inicial separadas por espaço\n");
+    scanVector(x);
+
+    printf("Digite a quantidade de iterações\n");
+    scanf("%d",&n);
 
     //printf("matriz A:\n");
     //printMatrixA();
     //printf("vetor b:\n");
     //printVector(b);
     printSystem();
+    printf("\n");
 
-    getUpperTriangularMatrix();
-    //getLowerTriangularMatrix();
-    //printf("Matriz escalonada inferior:\n");
-    //printMatrixA();
-    getX();
-
-    printf("Solução x: ");
+    printf("%*dª iteração: ", (int)log10(n)+1, 0);
     printVector(x);
+
+    for (int i=0;i<n;i++) {
+        nextIteraction();
+        printf("%*dª iteração: ", (int)log10(n)+1, i+1);
+        printVector(x);
+    }
 
     return 0;
 }

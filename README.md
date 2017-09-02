@@ -27,6 +27,12 @@ O programa usa o método do ponto fixo para achar uma aproximação de uma raiz 
 ./fixedPointMethod <número_de_iterações> <valor_incicial_de_x>
 ```
 
+## gaussSiedel.c
+Resolve equações lineares Ax = b usando o método de Gauss-Siedel (o método de Gauss-Jacobi está comentado). O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
+```
+./gaussSiedel
+```
+
 ## newtonMethod.c
 O programa usa o método de Newton para achar uma aproximação de uma raiz de uma função p, a partir de um valor inicial de x. Você deve editar o programa e colocar a função p e sua derivada p'
 ```
