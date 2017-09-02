@@ -43,7 +43,7 @@ void table(int x, long double m, long double n) {
 int main(int argc, char *argv[]) {
     if (argc != 4) {
         printf("Número de argumentos incorreto\n");
-        printf("Uso correto: ./binaryRootSearch <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>\n");
+        printf("Uso correto: ./bisectionMethod <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>\n");
         return 1;
     }
     int n = atoi(argv[1]);

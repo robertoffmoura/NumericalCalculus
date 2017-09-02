@@ -8,10 +8,10 @@ Pega um número em uma base e retorna ele em outra base
 ./baseChange <número> <base_inicial> <base_final>
 ```
 
-## binaryRootSearch.c
+## bisectionMethod.c
 Se há uma raiz de uma funcão f em um intervalo [a,b], o programa divide o intervalo pela metade recursivamente um número i de vezes. Você deve editar o programa e colocar a função f
 ```
-./binaryRootSearch <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>
+./bisectionMethod <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>
 ```
 ## falsePositionMethod.c
 Se há uma raiz de uma funcão f em um intervalo [a,b], o programa divide o intervalo recursivamente um número i de vezes, usando a seguinte fórmula:
