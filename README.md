@@ -43,8 +43,8 @@ O programa usa o método de Newton para achar uma aproximação de uma raiz de u
 ```
 ./newtonMethod <número_de_iterações> <valor_incicial_de_x>
 ```
-## solveLinearSystem.c
-Serve para resolver sistemas de equações lineares do tipo Ax = b. O programa vai perguntar a dimensão da matriz e depois pedir para preencher a matriz e o vetor independente b. O resultado é o vetor solução x do sistema linear
+## gaussianElimination.c
+Serve para resolver sistemas de equações lineares do tipo Ax = b usando o método de eliminação de Gauss. O programa vai perguntar a dimensão da matriz e depois pedir para preencher a matriz e o vetor independente b. O resultado é o vetor solução x do sistema linear
 ```
-./solveLinearSystem
+./gaussianElimination
 ```
