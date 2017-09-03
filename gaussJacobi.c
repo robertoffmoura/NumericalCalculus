@@ -6,7 +6,7 @@ int dim;
 long double* A;
 long double* b;
 long double* x;
-long double* beta;
+long double* alpha;
 
 long double* a(int i, int j) {
     return A+i*dim+j;
@@ -107,18 +107,17 @@ int max(long double* v, int length) {
     return maximumIndex;
 }
 
-long double sassenfeldCriterion() {
+long double convergenceCriterion() {
     for (int i=0;i<dim;i++) {
-        beta[i] = 0;
-        for (int j=0;j<i;j++) {
-            beta[i] += beta[j]*absoluteValue(*a(i,j));
+        alpha[i] = 0;
+        for (int j=0;j<dim;j++) {
+            if (i!=j) {
+                alpha[i] += absoluteValue(*a(i,j));
+            }
         }
-        for (int j=i+1;j<dim;j++) {
-            beta[i] += absoluteValue(*a(i,j));
-        }
-        beta[i] /= absoluteValue(*a(i,i));
+        alpha[i] /= absoluteValue(*a(i,i));
     }
-    return beta[max(beta, dim)];
+    return alpha[max(alpha, dim)];
 }
 
 int main() {
@@ -128,7 +127,7 @@ int main() {
     A = malloc(sizeof(long double)*dim*dim);
     x = malloc(sizeof(long double)*dim);
     b = malloc(sizeof(long double)*dim);
-    beta = malloc(sizeof(long double)*dim);
+    alpha = malloc(sizeof(long double)*dim);
 
     printf("Agora digite cada entrada da matriz A separada por espaços e separe as linhas pela tecla Enter\n");
     scanMatrixA();
@@ -150,12 +149,12 @@ int main() {
     printSystem();
     printf("\n");
 
-    long double betaMax = sassenfeldCriterion();
+    long double alphaMax = convergenceCriterion();
     printf("Critério das linhas: ");
-    if (betaMax < 1) {
-        printf("beta = %Lf < 1, O método gera uma sequência convergente independentemente do vetor x inicial\n", betaMax);
+    if (alphaMax < 1) {
+        printf("alpha = %Lf < 1, O método gera uma sequência convergente independentemente do vetor x inicial\n", alphaMax);
     } else {
-        printf("beta = %Lf ≥ 1, o método pode ou não convergir\n", betaMax);
+        printf("alpha = %Lf ≥ 1, o método pode ou não convergir\n", alphaMax);
     }
     printf("\n");
 

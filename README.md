@@ -26,9 +26,14 @@ O programa usa o método do ponto fixo para achar uma aproximação de uma raiz 
 ```
 ./fixedPointMethod <número_de_iterações> <valor_incicial_de_x>
 ```
+## gaussJacobi.c
+Resolve equações lineares Ax = b usando o método de Gauss-Siedel. O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
+```
+./gaussJacobi
+```
 
 ## gaussSiedel.c
-Resolve equações lineares Ax = b usando o método de Gauss-Siedel (o método de Gauss-Jacobi está comentado). O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
+Resolve equações lineares Ax = b usando o método de Gauss-Jacobi. O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
 ```
 ./gaussSiedel
 ```
