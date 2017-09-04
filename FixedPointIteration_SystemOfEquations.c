@@ -35,7 +35,7 @@ void iterate(int n) {
 int main(int argc, char *argv[]) {
     if (argc != 2+N) {
         printf("Número de argumentos incorreto\n");
-        printf("Uso correto: ./MultivariableFixedPointMethod <número_de_iterações> <valor_incicial_de_x0> ...  <valor_incicial_de_x2>\n");
+        printf("Uso correto: ./fixedPointIteration_SystemOfEquations <número_de_iterações> <valor_incicial_de_x0> ...  <valor_incicial_de_x2>\n");
         return 1;
     }
     int n = atoi(argv[1]);

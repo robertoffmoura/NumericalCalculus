@@ -21,11 +21,17 @@ Você deve editar o programa e colocar a função f.
 ./falsePositionMethod <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>
 ```
 
-## fixedPointMethod.c
+## fixedPointIteration.c
 O programa usa o método do ponto fixo para achar uma aproximação de uma raiz de uma função f(x) = 0, a partir de um valor inicial de x. Você deve editar o programa e colocar a função de iteração phi tal que phi(x) = x
 ```
-./fixedPointMethod <número_de_iterações> <valor_incicial_de_x>
+./fixedPointIteration <número_de_iterações> <valor_incicial_de_x>
 ```
+## fixedPointIteration_SystemOfEquations.c
+O programa usa o método do ponto fixo para achar uma aproximação de uma raiz de uma função vetorial f(x0, x1,..., xN) = [0, 0,..., 0], a partir de um valor inicial do vetor x. Você deve editar o programa e colocar a função vetorial de iteração phi tal que phi(x) = x
+```
+./fixedPointIteration_SystemOfEquations <número_de_iterações> <valor_incicial_de_x0> <valor_inicial_de_x1> ... <valor_inicial_de_xN>
+```
+
 ## gaussJacobi.c
 Resolve equações lineares Ax = b usando o método de Gauss-Siedel. O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
 ```
