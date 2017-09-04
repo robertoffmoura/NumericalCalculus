@@ -84,9 +84,9 @@ long double* nextIteraction(long double* x) {
         xf[i] = b[i];
         for (int j=0;j<i;j++) {
             //Gauss-Seidel:
-            xf[i]-=*a(i,j)*xf[j];
+            //xf[i]-=*a(i,j)*xf[j];
             //Gauss-Jacobi:
-            //xf[i]-=a[i][j]*x[j];
+            xf[i]-=a[i][j]*x[j];
         }
         for (int j=i+1;j<dim;j++) {
             xf[i]-=*a(i,j)*x[j];

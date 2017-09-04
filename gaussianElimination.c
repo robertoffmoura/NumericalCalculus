@@ -43,6 +43,19 @@ int max(int column) {
     }
     return maxIndex;
 }
+/*
+int max2(int column) {
+    int maxIndex = column;
+    int max=a[column][column];
+    for (int i=column;i>=0;i--) {
+        if (absoluteValue(a[i][column]) > absoluteValue(max)) {
+            max = a[i][column];
+            maxIndex = i;
+        }
+    }
+    return maxIndex;
+}
+*/
 
 void getUpperTriangularMatrix() {
     for (int j=0;j<dim;j++) {
@@ -75,7 +88,7 @@ void getLowerTriangularMatrix() {
             for (int j2=j;j2<dim;j2++) {
                 a[i][j2]-=a[dim-1-j][j2]*aij/a[dim-1-j][j];
             }
-            b[i]-=b[dim-i-j]*aij/a[dim-1-j][j];
+            b[i]-=b[dim-1-j]*aij/a[dim-1-j][j];
         }
     }
 }
@@ -89,6 +102,17 @@ void getX() {
             r -= a[i][j]*x[j];
         }
         x[i] = r/a[i][i];
+    }
+}
+
+void getX2() {
+    long double r;
+    for (int i=dim-1;i>-1;i--) {
+        r = b[dim-1-i];
+        for (int j=dim-1;j>i;j--) {
+            r -= a[dim-1-i][j]*x[j];
+        }
+        x[i] = r/a[dim-1-i][i];
     }
 }
 
@@ -152,8 +176,6 @@ int main() {
     printSystem();
 
     getUpperTriangularMatrix();
-    //getLowerTriangularMatrix();
-    //printf("Matriz escalonada inferior:\n");
     //printMatrixA();
     getX();
 
