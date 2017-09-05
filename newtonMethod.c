@@ -25,6 +25,6 @@ int main(int argc, char *argv[]) {
     }
     int n = atoi(argv[1]);
     long double x0 = atof(argv[2]);
-    printf("root = %3.24Lf\n", newton(x0,n));
+    printf("raiz = %3.24Lf\n", newton(x0,n));
     return 0;
 }

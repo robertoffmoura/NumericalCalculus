@@ -8,18 +8,11 @@ long double a[N][N];
 long double x[N];
 long double b[N];
 
-long double min(long double a, long double b) {
-    return a < b ? a : b;
-}
-
-long double absoluteValue(long double x) {
-    return x > 0 ? x : -x;
-}
+long double min(long double a, long double b) { return a < b ? a : b; }
+long double absoluteValue(long double x) { return x > 0 ? x : -x; }
 
 void swapRows(int i1, int i2) {
-    if (i1==i2) {
-        return;
-    }
+    if (i1==i2) return;
     long double temp;
     for (int j=i1;j<dim;j++) {
         temp = a[i1][j];
@@ -104,7 +97,7 @@ void getX() {
         x[i] = r/a[i][i];
     }
 }
-
+/*
 void getX2() {
     long double r;
     for (int i=dim-1;i>-1;i--) {
@@ -115,6 +108,7 @@ void getX2() {
         x[i] = r/a[dim-1-i][i];
     }
 }
+*/
 
 void scanMatrixA() {
     for (int i=0;i<dim;i++) {

@@ -12,13 +12,8 @@ long double* a(int i, int j) {
     return A+i*dim+j;
 }
 
-long double min(long double a, long double b) {
-    return a < b ? a : b;
-}
-
-long double absoluteValue(long double x) {
-    return x > 0 ? x : -x;
-}
+long double min(long double a, long double b) { return a < b ? a : b; }
+long double absoluteValue(long double x) { return x > 0 ? x : -x; }
 
 void swapRows(int i1, int i2) {
     if (i1==i2) {
@@ -86,7 +81,7 @@ long double* nextIteraction(long double* x) {
             //Gauss-Seidel:
             //xf[i]-=*a(i,j)*xf[j];
             //Gauss-Jacobi:
-            xf[i]-=a[i][j]*x[j];
+            xf[i]-=*a(i,j)*x[j];
         }
         for (int j=i+1;j<dim;j++) {
             xf[i]-=*a(i,j)*x[j];
@@ -119,6 +114,18 @@ long double convergenceCriterion() {
     }
     return alpha[max(alpha, dim)];
 }
+/*
+long double* solve(int dim_, long double* A_, long double* x_, long double* b_, int n) {
+    dim = dim_;
+    A = A_;
+    x = x_;
+    b = b_;
+    for (int i=0;i<n;i++) {
+        x = nextIteraction(x);
+    }
+    return x;
+}
+*/
 
 int main() {
     printf("Bem vindo ao programa que resolve sistemas de equações lineares do tipo Ax=b usando o método de Gauss-Seidel\n");
@@ -160,6 +167,8 @@ int main() {
 
     printf("%*dª iteração: ", (int)log10(n)+1, 0);
     printVector(x);
+
+    //x = solve(dim,A,x,b,n);
 
     for (int i=0;i<n;i++) {
         x = nextIteraction(x);

@@ -12,13 +12,8 @@ long double* a(int i, int j) {
     return A+i*dim+j;
 }
 
-long double min(long double a, long double b) {
-    return a < b ? a : b;
-}
-
-long double absoluteValue(long double x) {
-    return x > 0 ? x : -x;
-}
+long double min(long double a, long double b) { return a < b ? a : b; }
+long double absoluteValue(long double x) { return x > 0 ? x : -x; }
 
 void swapRows(int i1, int i2) {
     if (i1==i2) {

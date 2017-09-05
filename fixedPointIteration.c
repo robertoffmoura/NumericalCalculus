@@ -7,7 +7,7 @@ long double phi(long double x) {
     return sqrt(6-x);
 }
 
-long double getRoot(long double x, int i) {
+long double iterate(long double x, int i) {
     for (int j=0; j<i; j++) {
         x = phi(x);
     }
@@ -22,6 +22,6 @@ int main(int argc, char *argv[]) {
     }
     int n = atoi(argv[1]);
     long double x0 = atof(argv[2]);
-    printf("root = %3.24Lf\n", getRoot(x0,n));
+    printf("raiz = %3.24Lf\n", iterate(x0,n));
     return 0;
 }

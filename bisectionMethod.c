@@ -50,6 +50,6 @@ int main(int argc, char *argv[]) {
     long double a = atoi(argv[2]);
     long double b = atoi(argv[3]);
     //table(n, a, b);
-    printf("root = %3.24Lf ± %3.6Le\n", root(n,a,b), error(n,a,b));
+    printf("raiz = %3.24Lf ± %3.6Le\n", root(n,a,b), error(n,a,b));
     return 0;
 }

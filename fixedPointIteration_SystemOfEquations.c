@@ -33,6 +33,8 @@ void iterate(int n) {
 
 
 int main(int argc, char *argv[]) {
+    //Pesquisar: Banach Fixed Point Theorem
+    //Se a o módulo do vetor derivada de phi é sempre menor que 1, a sequeência converge
     if (argc != 2+N) {
         printf("Número de argumentos incorreto\n");
         printf("Uso correto: ./fixedPointIteration_SystemOfEquations <número_de_iterações> <valor_incicial_de_x0> ...  <valor_incicial_de_x2>\n");
