@@ -13,7 +13,7 @@ long double pLinha(long double x) {
 }
 
 long double newton(long double x0, int i) {
-    if (i==0) return x0;
+    if (i == 0) return x0;
     return newton(x0 - p(x0)/pLinha(x0),i-1);
 }
 
@@ -25,6 +25,6 @@ int main(int argc, char *argv[]) {
     }
     int n = atoi(argv[1]);
     long double x0 = atof(argv[2]);
-    printf("raiz = %3.24Lf\n", newton(x0,n));
+    printf("raiz = %3.24Lf\n", newton(x0, n));
     return 0;
 }

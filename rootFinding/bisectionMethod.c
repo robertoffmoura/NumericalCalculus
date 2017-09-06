@@ -13,12 +13,12 @@ long double root(int i, long double m, long double n) {
         printf("Não há raizes ou há um número par de raízes no intervalo [%Lf, %Lf]\n",m,n);
         return 0;
     }
-    if (i<1) {
+    if (i < 1) {
         printf("Número de iterações inválido\n");
         return 0;
     }
     long double c = (m+n)/2.0;
-    if (i==1) {
+    if (i == 1) {
         return c;
     }
     if ((f(m) < 0 && f(c) > 0) || (f(m) > 0 && f(c) < 0)) {
@@ -50,6 +50,6 @@ int main(int argc, char *argv[]) {
     long double a = atoi(argv[2]);
     long double b = atoi(argv[3]);
     //table(n, a, b);
-    printf("raiz = %3.24Lf ± %3.6Le\n", root(n,a,b), error(n,a,b));
+    printf("raiz = %3.24Lf ± %3.6Le\n", root(n, a, b), error(n, a, b));
     return 0;
 }

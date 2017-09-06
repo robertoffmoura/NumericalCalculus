@@ -8,15 +8,13 @@ long double* b;
 long double* x;
 long double* beta;
 
-long double* a(int i, int j) {
-    return A+i*dim+j;
-}
+long double* a(int i, int j) { return A+i*dim+j; }
 
 long double min(long double a, long double b) { return a < b ? a : b; }
 long double absoluteValue(long double x) { return x > 0 ? x : -x; }
 
 void swapRows(int i1, int i2) {
-    if (i1==i2) {
+    if (i1 == i2) {
         return;
     }
     long double temp;
@@ -48,7 +46,7 @@ void scanVector(long double *v) {
 void printMatrixA() {
     for (int i=0;i<dim;i++) {
         for (int j=0;j<dim;j++) {
-            printf("%10.6Lf ",*a(i,j));
+            printf("%10.6Lf ", *a(i,j));
         }
         //printf("    %.1Lf", b[i]);
         printf("\n");
@@ -67,7 +65,7 @@ void printSystem() {
     for (int i=0;i<dim;i++) {
         printf("[ ");
         for (int j=0;j<dim;j++) {
-            printf("%10.6Lf ",*a(i,j));
+            printf("%10.6Lf ", *a(i,j));
         }
         printf("] [ x%-*d ] = [ %10.6Lf ]\n", (int)log10(dim)+1, i+1, b[i]);
     }
@@ -75,16 +73,16 @@ void printSystem() {
 
 long double* nextIteraction(long double* x) {
     long double* xf = malloc(sizeof(long double)*dim);
-    for (int i=0; i < dim; i++) {
+    for (int i=0;i<dim;i++) {
         xf[i] = b[i];
         for (int j=0;j<i;j++) {
             //Gauss-Seidel:
-            xf[i]-=*a(i,j)*xf[j];
+            xf[i] -= *a(i,j)*xf[j];
             //Gauss-Jacobi:
             //xf[i]-=a[i][j]*x[j];
         }
         for (int j=i+1;j<dim;j++) {
-            xf[i]-=*a(i,j)*x[j];
+            xf[i] -= *a(i,j)*x[j];
         }
         xf[i] /= *a(i,i);
     }
@@ -119,7 +117,7 @@ long double sassenfeldCriterion() {
 int main() {
     printf("Bem vindo ao programa que resolve sistemas de equações lineares do tipo Ax=b usando o método de Gauss-Seidel\n");
     printf("Digite o número n = dimensão da matriz A\n");
-    scanf("%d",&dim);
+    scanf("%d", &dim);
     A = malloc(sizeof(long double)*dim*dim);
     x = malloc(sizeof(long double)*dim);
     b = malloc(sizeof(long double)*dim);
@@ -136,7 +134,7 @@ int main() {
 
     printf("Digite a quantidade de iterações\n");
     int n;
-    scanf("%d",&n);
+    scanf("%d", &n);
 
     //printf("matriz A:\n");
     //printMatrixA();
