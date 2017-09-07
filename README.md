@@ -46,6 +46,18 @@ Resolve equações lineares Ax = b usando o método de Gauss-Jacobi. O programa 
 ./gaussSiedel
 ```
 
+## interpolationGaussianElimination.c
+Pega n+1 pontos e retorna o polinômio interpolador de grau n resolvendo um sistema linear pelo método de eliminação de Gauss
+```
+./interpolationGaussianElimination
+```
+
+## lagrangeMethod.c
+Pega n+1 pontos e retorna o polinômio interpolador de grau n usando o método de Lagrange
+```
+./lagrangeMethod
+```
+
 ## multivariableFixedPointIteration.c
 O programa usa o método do ponto fixo para achar uma aproximação de uma raiz de uma função vetorial f(x0, x1,..., xN) = [0, 0,..., 0], a partir de um valor inicial do vetor x. Você deve editar o programa e colocar a função vetorial de iteração phi tal que phi(x) = x
 ```
@@ -58,6 +70,11 @@ Usa o método de Newthon-Raphson para achar raízes de sistemas de equações. U
 ./multivariableNewtonRaphsonMedthod
 ```
 
+## newtonInterpolation.c
+Pega n+1 pontos e retorna o polinômio interpolador de grau n usando o método de Newton
+```
+./newtonInterpolation
+```
 ## newtonMethod.c
 O programa usa o método de Newton para achar uma aproximação de uma raiz de uma função p, a partir de um valor inicial de x. Você deve editar o programa e colocar a função p e sua derivada p'
 ```

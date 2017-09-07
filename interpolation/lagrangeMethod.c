@@ -22,7 +22,7 @@ long double l(int k, long double x0) {
     return r;
 }
 
-long double getF(long double x0) {
+long double P(long double x0) {
     long double r = 0;
     for (int k=0;k<dim;k++) {
         r += y[k]*l(k, x0);
@@ -71,6 +71,6 @@ int main() {
     long double x0;
     while (1) {
         scanf("%Lf", &x0);
-        printf("%Lf\n", getF(x0));
+        printf("%Lf\n", P(x0));
     }
 }
