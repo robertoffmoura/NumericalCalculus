@@ -14,7 +14,7 @@ Utiliza o método de Romberg para calcular a integral de uma função f(x). Voc�
 ### simpson.c
 Utiliza o método de Simpson para calcular a integral de uma função f(x). Você deve editar o programa para colocar a função f(x).
 ```
-./simpson
+./simpson <extremo_esquerdo> <extremo_direito_do_intervalo> <número_de_partições>
 
 ```
 
