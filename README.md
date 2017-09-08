@@ -58,6 +58,12 @@ Pega n+1 pontos e retorna o polinômio interpolador de grau n usando o método d
 ./lagrangeMethod
 ```
 
+## linearRegression.c
+Pega n pontos, faz uma regressão linear e retorna a equação da reta e o valor de r2.
+```
+./linearRegression
+```
+
 ## multivariableFixedPointIteration.c
 O programa usa o método do ponto fixo para achar uma aproximação de uma raiz de uma função vetorial f(x0, x1,..., xN) = [0, 0,..., 0], a partir de um valor inicial do vetor x. Você deve editar o programa e colocar a função vetorial de iteração phi tal que phi(x) = x
 ```
@@ -79,4 +85,24 @@ Pega n+1 pontos e retorna o polinômio interpolador de grau n usando o método d
 O programa usa o método de Newton para achar uma aproximação de uma raiz de uma função p, a partir de um valor inicial de x. Você deve editar o programa e colocar a função p e sua derivada p'
 ```
 ./newtonMethod <número_de_iterações> <valor_incicial_de_x>
+```
+
+## romberg.c
+Utiliza o método de Romberg para calcular a integral de uma função f(x). Você deve editar o programa para colocar a função f(x).
+```
+./romberg
+
+```
+
+## simpson.c
+Utiliza o método de Simpson para calcular a integral de uma função f(x). Você deve editar o programa para colocar a função f(x).
+```
+./simpson
+
+```
+
+## trapezium.c
+Utiliza o método dos trapézios para calcular a integral de uma função f(x). Você deve editar o programa para colocar a função f(x).
+```
+./trapezium
 ```
