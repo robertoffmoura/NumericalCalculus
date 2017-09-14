@@ -35,13 +35,13 @@ Serve para resolver sistemas de equações lineares do tipo Ax = b usando o mét
 ```
 
 ## gaussJacobi.c
-Resolve equações lineares Ax = b usando o método de Gauss-Siedel. O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
+Resolve equações lineares Ax = b usando o método de Gauss-Jacobi. O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
 ```
 ./gaussJacobi
 ```
 
 ## gaussSiedel.c
-Resolve equações lineares Ax = b usando o método de Gauss-Jacobi. O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
+Resolve equações lineares Ax = b usando o método de Gauss-Siedel. O programa pede a dimensão do sistema, as entradas da matriz A, do vetor b, do vetor inicial x, e quantas iterações. Retorna a solução x
 ```
 ./gaussSiedel
 ```
