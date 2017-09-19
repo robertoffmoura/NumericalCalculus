@@ -14,6 +14,12 @@ Se há uma raiz de uma funcão f em um intervalo [a,b], o programa divide o inte
 ./bisectionMethod <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>
 ```
 
+## eulerMethod.c
+Usando o método de Euler, recebe um ponto inicial (x0, y0), o número de iterações e o espaçamento h entre os valores de x. Retorna os pontos seguintes calculados a partir da derivada da função. Você deve editar o programa e colcoar a derivada da função
+```
+./eulerMethod
+```
+
 ## falsePositionMethod.c
 Se há uma raiz de uma funcão f em um intervalo [a,b], o programa divide o intervalo recursivamente um número i de vezes, usando a seguinte fórmula:
 x = (a*f(b) - b*f(a)) / (f(b) - f(a))
@@ -22,6 +28,7 @@ Você deve editar o programa e colocar a função f.
 ./falsePositionMethod <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>
 
 ```
+
 ## fixedPointIteration.c
 O programa usa o método do ponto fixo para achar uma aproximação de uma raiz de uma função f(x) = 0, a partir de um valor inicial de x. Você deve editar o programa e colocar a função de iteração phi tal que phi(x) = x
 ```
@@ -64,6 +71,12 @@ Pega n pontos, faz uma regressão linear e retorna a equação da reta e o valor
 ./linearRegression
 ```
 
+## modifiedEulerMethod.c
+Usando o método de Euler modificado, recebe um ponto inicial (x0, y0), o número de iterações e o espaçamento h entre os valores de x. Retorna os pontos seguintes calculados a partir da derivada da função. Você deve editar o programa e colcoar a derivada da função
+```
+./modifiedEulerMethod
+```
+
 ## multivariableFixedPointIteration.c
 O programa usa o método do ponto fixo para achar uma aproximação de uma raiz de uma função vetorial f(x0, x1,..., xN) = [0, 0,..., 0], a partir de um valor inicial do vetor x. Você deve editar o programa e colocar a função vetorial de iteração phi tal que phi(x) = x
 ```
@@ -81,6 +94,7 @@ Pega n+1 pontos e retorna o polinômio interpolador de grau n usando o método d
 ```
 ./newtonInterpolation
 ```
+
 ## newtonMethod.c
 O programa usa o método de Newton para achar uma aproximação de uma raiz de uma função p, a partir de um valor inicial de x. Você deve editar o programa e colocar a função p e sua derivada p'
 ```
@@ -111,4 +125,16 @@ Utiliza o método de Simpson para calcular a integral de uma função f(x). Voc�
 Utiliza o método dos trapézios para calcular a integral de uma função f(x). Você deve editar o programa para colocar a função f(x).
 ```
 ./trapezium
+```
+
+## 2ndOrderEulerMethod.c
+Usando o método de Euler, recebe um valor de x0, o valor da função y0, o valor da derivada da função y'0, o número de iterações e o espaçamento h entre os valores de x. Retorna os pontos seguintes calculados a partir da derivadas de primeira e segunda ordem da função. Você deve editar o programa e colcoar a derivada de segunda ordem da função
+```
+./2ndOrderEulerMethod
+```
+
+## 4thOrderRungeKutta.c
+Usando o método de Runge Kutta, recebe um ponto inicial (x0, y0), o número de iterações e o espaçamento h entre os valores de x. Retorna os pontos seguintes calculados a partir da derivada da função. Você deve editar o programa e colcoar a derivada da função
+```
+./4thOrderRungeKutta
 ```
