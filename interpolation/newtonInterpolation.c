@@ -57,9 +57,8 @@ void printP() {
 }
 
 int main() {
-    printf("Digite o grau n do polinômio interpolador\n");
+    printf("Digite o número n de pontos a serem interpolados\n");
     scanf("%d", &dim);
-    dim++;
     printf("Digite os n valores de x dos pontos a serem interpolados, separados por espaço\n");
     scanVector(x);
     printf("Digite os n valores de f(x) dos pontos a serem interpolados, separados por espaço\n");
@@ -68,6 +67,16 @@ int main() {
     printf("Polinômio: ");
     printP();
     printf("\n");
+    /*
+    printf("tabela de diferenças divididas:\n");
+    for (int i=0;i<dim;i++) {
+        for (int j=0;j<dim;j++) {
+            printf("%Lf ",d[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    */
     printf("Agora digite x para saber o valor de f(x) aproximado pela interpolação\n");
     long double x0;
     while (1) {
