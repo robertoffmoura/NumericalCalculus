@@ -29,7 +29,7 @@ O programa usa o método do ponto fixo para achar uma aproximação de uma raiz 
 ```
 
 ### multivariableNewtonRaphsonMedthod.c
-Usa o método de Newthon-Raphson para achar raízes de sistemas de equações. Usando um valor inicial para o vetor x. Você deve editar o programa e colocar a função vetorial f(x) e a matriz jacobiana da função.
+Usa o método de Newthon-Raphson para achar raízes de sistemas de equações. Usando um valor inicial para o vetor x. Você deve editar o programa e colocar a função vetorial f(x) e a matriz jacobiana da função, ou seja, cada uma das derivadas parciais de cada uma das coordenadas da função f(x)
 ```
 ./multivariableNewtonRaphsonMedthod
 ```

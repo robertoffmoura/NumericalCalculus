@@ -2,9 +2,18 @@
 #include <stdlib.h>
 #include <math.h>
 
+/*
+O programa usa o método do ponto fixo para achar uma aproximação de uma raiz de uma função vetorial f(x0, x1,..., xN) = [0, 0,..., 0], a partir de um valor inicial do vetor x. Você deve editar o programa e colocar a função vetorial de iteração phi tal que phi(x) = x
+
+Uso:
+./multivariableFixedPointIteration <número_de_iterações> <valor_incicial_de_x0> <valor_inicial_de_x1> ... <valor_inicial_de_xN>
+*/
+
+//N é a dimenão, número de coordenadas da função
 #define N 3
 long double x[N];
 
+//Define cada coordenada da função de iteração phi(x)
 long double phi0(long double* x) { return sqrt(1-x[1]*x[1]); }
 long double phi1(long double* x) { return x[0]/2; }
 long double phi2(long double* x) { return x[0]+x[1]; }

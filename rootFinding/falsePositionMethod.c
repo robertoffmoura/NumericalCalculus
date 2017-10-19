@@ -2,9 +2,17 @@
 #include <stdlib.h>
 #include <math.h>
 
+/*
+Se há uma raiz de uma funcão f em um intervalo [a,b], o programa divide o intervalo recursivamente um número i de vezes, usando a seguinte fórmula:
+x = (a*f(b) - b*f(a)) / (f(b) - f(a))
+Você deve editar o programa e colocar a função f.
+
+Uso:
+./falsePositionMethod <número_de_iterações> <extremo_esquerdo> <extremo_direito_do_intervalo>
+*/
+
 long double f(long double x) {
-    //return exp(x) + x - 2.0;
-    //return sin(x) + x - 1.0;
+    //Coloque sua função logo depois do "return"
     return x*x*x - 3.2*x*x + 0.21*x + 4.41;
 }
 

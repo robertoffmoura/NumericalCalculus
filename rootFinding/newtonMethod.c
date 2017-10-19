@@ -2,13 +2,20 @@
 #include <stdlib.h>
 #include <math.h>
 
+/*
+O programa usa o método de Newton para achar uma aproximação de uma raiz de uma função p, a partir de um valor inicial de x. Você deve editar o programa e colocar a função p e sua derivada p'
+
+Uso:
+./newtonMethod <número_de_iterações> <valor_incicial_de_x>
+*/
+
 long double p(long double x) {
-    // coloque sua função aqui
+    //Coloque sua função aqui
     return exp(x) - 2.0*cos(x);
 }
 
 long double pLinha(long double x) {
-    // coloque sua derivada da função aqui
+    //Coloque sua derivada da função aqui
     return exp(x) + 2.0*sin(x);
 }
 
