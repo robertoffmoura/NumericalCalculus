@@ -9,7 +9,7 @@ void iterate(long double *x, long double *y, long double h) {
     long double r2 = yLinha(*x + h/2.0, *y + r1*h/2.0);
     long double r3 = yLinha(*x + h/2.0, *y + r2*h/2.0);
     long double r4 = yLinha(*x + h, *y + r3*h);
-    *y += (r1 + 2.0*r2 + 2.0*r3 + r4)/6.0;
+    *y += h*(r1 + 2.0*r2 + 2.0*r3 + r4)/6.0;
     *x += h;
 }
 
