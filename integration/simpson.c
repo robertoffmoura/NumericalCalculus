@@ -9,10 +9,10 @@ long double f(long double x) {
 long double integral(long double a, long double b, int n) {
     long double r = 0;
     r += f(a);
-    for (int i=1;i<n;i+=2) {
+    for (int i=1; i<n; i+=2) {
         r += 4*f(a + (b-a)*i/n);
     }
-    for (int i=2;i<n;i+=2) {
+    for (int i=2; i<n; i+=2) {
         r += 2*f(a + (b-a)*i/n);
     }
     r += f(b);
@@ -26,13 +26,13 @@ int main(int argc, char *argv[]) {
         printf("Uso correto: ./simpson <extremo_esquerdo> <extremo_direito_do_intervalo> <número_de_partições>\n");
         return 1;
     }
-    long double a,b;
+    long double a, b;
     int n;
     /*
     printf("Digite os extremos do intervalo [a,b] que será integrado\n");
-    scanf("%Lf%Lf", &a,&b);
+    scanf("%Lf%Lf", &a, &b);
     printf("Agora digite o número de partições do intervalo\n");
-    scanf("%d",&n);
+    scanf("%d", &n);
     */
     a = atof(argv[1]);
     b = atof(argv[2]);

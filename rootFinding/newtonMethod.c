@@ -21,7 +21,7 @@ long double pLinha(long double x) {
 
 long double newton(long double x0, int i) {
     if (i == 0) return x0;
-    return newton(x0 - p(x0)/pLinha(x0),i-1);
+    return newton(x0 - p(x0)/pLinha(x0), i-1);
 }
 
 int main(int argc, char *argv[]) {

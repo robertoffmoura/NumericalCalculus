@@ -18,7 +18,7 @@ void swapRows(int i1, int i2) {
         return;
     }
     long double temp;
-    for (int j=i1;j<dim;j++) {
+    for (int j=i1; j<dim; j++) {
         temp = *a(i1,j);
         *a(i1,j) = *a(i2,j);
         *a(i2,j) = temp;
@@ -30,22 +30,22 @@ void swapRows(int i1, int i2) {
 }
 
 void scanMatrixA() {
-    for (int i=0;i<dim;i++) {
-        for (int j=0;j<dim;j++) {
+    for (int i=0; i<dim; i++) {
+        for (int j=0; j<dim; j++) {
             scanf("%Lf", a(i,j));
         }
     }
 }
 
 void scanVector(long double *v) {
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         scanf("%Lf", v+i);
     }
 }
 
 void printMatrixA() {
-    for (int i=0;i<dim;i++) {
-        for (int j=0;j<dim;j++) {
+    for (int i=0; i<dim; i++) {
+        for (int j=0; j<dim; j++) {
             printf("%10.6Lf ", *a(i,j));
         }
         //printf("    %.1Lf", b[i]);
@@ -55,16 +55,16 @@ void printMatrixA() {
 
 void printVector(long double *v) {
     printf("[ ");
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         printf("%10.6Lf ", *(v+i));
     }
     printf("]\n");
 }
 
 void printSystem() {
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         printf("[ ");
-        for (int j=0;j<dim;j++) {
+        for (int j=0; j<dim; j++) {
             printf("%10.6Lf ", *a(i,j));
         }
         printf("] [ x%-*d ] = [ %10.6Lf ]\n", (int)log10(dim)+1, i+1, b[i]);
@@ -73,15 +73,15 @@ void printSystem() {
 
 long double* nextIteraction(long double* x) {
     long double* xf = malloc(sizeof(long double)*dim);
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         xf[i] = b[i];
-        for (int j=0;j<i;j++) {
+        for (int j=0; j<i; j++) {
             //Gauss-Seidel:
-            //xf[i]-=*a(i,j)*xf[j];
+            //xf[i] -= *a(i,j)*xf[j];
             //Gauss-Jacobi:
             xf[i] -= *a(i,j)*x[j];
         }
-        for (int j=i+1;j<dim;j++) {
+        for (int j=i+1; j<dim; j++) {
             xf[i] -= *a(i,j)*x[j];
         }
         xf[i] /= *a(i,i);
@@ -92,7 +92,7 @@ long double* nextIteraction(long double* x) {
 
 int max(long double* v, int length) {
     int maximumIndex = 0;
-    for (int i=0;i<length;i++) {
+    for (int i=0; i<length; i++) {
         if (v[i] > v[maximumIndex]) {
             maximumIndex = i;
         }
@@ -101,9 +101,9 @@ int max(long double* v, int length) {
 }
 
 long double convergenceCriterion() {
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         alpha[i] = 0;
-        for (int j=0;j<dim;j++) {
+        for (int j=0; j<dim; j++) {
             if (i!=j) {
                 alpha[i] += absoluteValue(*a(i,j));
             }
@@ -118,7 +118,7 @@ long double* solve(int dim_, long double* A_, long double* x_, long double* b_, 
     A = A_;
     x = x_;
     b = b_;
-    for (int i=0;i<n;i++) {
+    for (int i=0; i<n; i++) {
         x = nextIteraction(x);
     }
     return x;

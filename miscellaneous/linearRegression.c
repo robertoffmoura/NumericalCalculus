@@ -18,7 +18,7 @@ void getLine() {
     long double sumY = 0;
     long double sumX2 = 0;
     long double sumXY = 0;
-    for (int i=0;i<n;i++) {
+    for (int i=0; i<n; i++) {
         sumX += x[i];
         sumY += y[i];
         sumX2 += x[i]*x[i];
@@ -34,7 +34,7 @@ long double f(long double x) {
 
 long double average(long double *v) {
     long double r = 0;
-    for (int i=0;i<n;i++) {
+    for (int i=0; i<n; i++) {
         r += v[i];
     }
     r /= n;
@@ -45,11 +45,11 @@ long double r2() {
     long double ym = average(y);
     long double sum1 = 0;
     long double sum2 = 0;
-    for (int i=0;i<n;i++) {
+    for (int i=0; i<n; i++) {
         sum1 += pow(y[i] - f(x[i]), 2);
         sum2 += pow(y[i] - ym, 2);
     }
-    return 1.0-(sum1/sum2);
+    return 1.0 - (sum1/sum2);
 }
 
 int main() {

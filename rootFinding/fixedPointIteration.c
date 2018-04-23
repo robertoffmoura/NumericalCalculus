@@ -17,7 +17,7 @@ long double phi(long double x) {
 
 //Realiza a iteração da função phi, n vezes, a partir de um valor x
 long double iterate(long double x, int n) {
-    for (int j=0;j<n;j++) {
+    for (int j=0; j<n; j++) {
         x = phi(x);
     }
     return x;

@@ -7,8 +7,8 @@ long double f[N];
 long double d[N][N];
 
 void getD() {
-    for (int i=0;i<dim;i++) {
-        for (int j=0;j<=i;j++) {
+    for (int i=0; i<dim; i++) {
+        for (int j=0; j<=i; j++) {
             if (j == 0) {
                 d[i][j] = f[i];
             } else {
@@ -19,14 +19,14 @@ void getD() {
 }
 
 void scanVector(long double *v) {
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         scanf("%Lf", v+i);
     }
 }
 
 long double term(int i, long double x0) {
     long double t = d[i][i];
-    for (int j=0;j<i;j++) {
+    for (int j=0; j<i; j++) {
         t *= (x0-x[j]);
     }
     return t;
@@ -34,21 +34,21 @@ long double term(int i, long double x0) {
 
 long double P(long double x0) {
     long double r = 0;
-    for (int i=0;i<dim;i++) {
-        r += term(i,x0);
+    for (int i=0; i<dim; i++) {
+        r += term(i, x0);
     }
     return r;
 }
 
 void printTerm(int i) {
     printf("%Lf ", d[i][i]);
-    for (int j=0;j<i;j++) {
-        printf("(x-%Lf)",x[j]);
+    for (int j=0; j<i; j++) {
+        printf("(x-%Lf)", x[j]);
     }
 }
 
 void printP() {
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         printTerm(i);
         if (i != dim-1) {
             printf(" + ");
@@ -69,9 +69,9 @@ int main() {
     printf("\n");
     /*
     printf("tabela de diferenças divididas:\n");
-    for (int i=0;i<dim;i++) {
-        for (int j=0;j<dim;j++) {
-            printf("%Lf ",d[i][j]);
+    for (int i=0; i<dim; i++) {
+        for (int j=0; j<dim; j++) {
+            printf("%Lf ", d[i][j]);
         }
         printf("\n");
     }

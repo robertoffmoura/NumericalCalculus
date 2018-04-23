@@ -28,16 +28,16 @@ long double root(int i, long double m, long double n) {
         return c;
     }
     if ((f(m) < 0 && f(c) > 0) || (f(m) > 0 && f(c) < 0)) {
-        return root(i-1,m,c);
+        return root(i-1, m, c);
     }
     if ((f(c) < 0 && f(n) > 0) || (f(c) > 0 && f(n) < 0)) {
-        return root(i-1,c,n);
+        return root(i-1, c, n);
     }
     return 0;
 }
 
 long double error(int i, long double m, long double n) {
-    return (n-m)/pow(2,i);
+    return (n-m)/pow(2, i);
 }
 
 void table(int x, long double m, long double n) {

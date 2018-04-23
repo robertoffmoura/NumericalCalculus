@@ -20,7 +20,7 @@ long double phi2(long double* x) { return x[0]+x[1]; }
 
 void printVector(long double *v) {
     printf("[ ");
-    for (int i=0;i<N;i++) {
+    for (int i=0; i<N; i++) {
         printf("%10.6Lf ", *(v+i));
     }
     printf("]\n");
@@ -32,7 +32,7 @@ void iterate(int n) {
         temp[0] = phi0(x);
         temp[1] = phi1(x);
         temp[2] = phi2(x);
-        for (int j=0;j<N;j++) {
+        for (int j=0; j<N; j++) {
             x[j] = temp[j];
         }
         printf("%*dª iteração: ", (int)log10(n)+1, i);
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     int n = atoi(argv[1]);
-    for (int i=0;i<N;i++) {
+    for (int i=0; i<N; i++) {
         x[i] = atof(argv[2+i]);
     }
     iterate(n);

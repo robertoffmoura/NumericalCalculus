@@ -6,14 +6,14 @@ long double x[N];
 long double y[N];
 
 void scanVector(long double *v) {
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         scanf("%Lf", v+i);
     }
 }
 
 long double l(int k, long double x0) {
     long double r = 1.0;
-    for (int i=0;i<dim;i++) {
+    for (int i=0; i<dim; i++) {
         if (i != k) {
             r *= (x0 - x[i]);
             r /= (x[k] - x[i]);
@@ -24,30 +24,30 @@ long double l(int k, long double x0) {
 
 long double P(long double x0) {
     long double r = 0;
-    for (int k=0;k<dim;k++) {
+    for (int k=0; k<dim; k++) {
         r += y[k]*l(k, x0);
     }
     return r;
 }
 
 void printL(int k) {
-    for (int i=0;i<dim;i++) {
-        if (i!=k) {
-            printf("(x-%.1Lf)",x[i]);
+    for (int i=0; i<dim; i++) {
+        if (i != k) {
+            printf("(x-%.1Lf)", x[i]);
         }
     }
     printf("/");
     long double d = 1;
-    for (int i=0;i<dim;i++) {
-        if (i!=k) {
+    for (int i=0; i<dim; i++) {
+        if (i != k) {
             d *= (x[k] - x[i]);
         }
     }
-    printf("%.1Lf",d);
+    printf("%.1Lf", d);
 }
 
 void printPolynom() {
-    for (int k=0;k<dim;k++) {
+    for (int k=0; k<dim; k++) {
         printf("%.3Lf ", y[k]);
         printL(k);
         if (k != dim-1) {
